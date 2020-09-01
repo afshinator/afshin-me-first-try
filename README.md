@@ -15,6 +15,13 @@
   https://www.tailwindtoolbox.com/guides/adding-fonts-to-tailwind-css
 
 
+2. Add Dark/Light Mode to site with switch
+
+    Looks like Gatsby plugin to the rescue: 
+    https://www.gatsbyjs.com/plugins/gatsby-plugin-dark-mode/
+
+    
+
   ---
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
