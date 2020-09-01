@@ -26,18 +26,19 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div className="bg-transparent max-w-5xl p-5"
-        style={{
-          margin: `0 auto`,
-        }}
+
+      <main
+        className="max-w-5xl min-h-full p-5 bg-transparent"
+        style={{ margin: "0 auto" }}
       >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+        {children}
+      </main>
+      
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
     </>
   )
 }
