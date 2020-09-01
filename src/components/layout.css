@@ -1,9 +1,9 @@
 /* Basically this is the global CSS file */
 
 body {
-  --bg: #edf2f7;  /* gray-100 */
+  --bg: #d9cfc1;  /* gray-100 */
   --hdr: #742a2a; /* red-900 */
-  --hdrTxt: #ddd;
+  --hdrTxt: #d9cfc1;
   --txt: black;
   background-color: var(--bg);
 }
@@ -13,8 +13,25 @@ body.dark {
 
   --bg: darkslategray;
   --hdr: #742a2a;
-  --hdrTxt: black;
+  --hdrTxt: ddd;
   --txt: white;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .appLogo {
+    animation: spinny infinite 40s linear;
+  }
+}
+
+
+@keyframes spinny {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 
