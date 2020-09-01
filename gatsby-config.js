@@ -28,6 +28,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-postcss`,
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["Lato, Yellowtail"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
