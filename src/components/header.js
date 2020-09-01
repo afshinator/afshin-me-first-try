@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
 const Icon = () => (
   <svg
@@ -31,23 +31,49 @@ const Arrow = () => (
   </svg>
 )
 
+const ThemeSwitcher = () => (
+  <ThemeToggler>
+    {({ theme, toggleTheme }) => (
+      <label>
+        <input
+          type="checkbox"
+          onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
+          checked={theme === "dark"}
+        />
+        Dark mode
+      </label>
+    )}
+  </ThemeToggler>
+)
+
 const Header = ({ siteTitle }) => {
   return (
-    <header className="text-gray-500 bg-red-900">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <Link to="/" className="flex  font-medium items-center text-white mb-4 md:mb-0">
+    <header
+      className=""
+      style={{
+        backgroundColor: "var(--hdr)",
+        color: "var(--hdrTxt)",
+        transition: "color 0.1s ease-out, background 0.1s ease-out",
+      }}
+    >
+      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center select-none">
+        <Link
+          to="/"
+          className="flex  font-medium items-center text-white mb-4 md:mb-0"
+        >
           <Icon />
-          <span className="ml-3 text-4xl  font-yt">{siteTitle}</span>
+          <span className="ml-3 text-4xl font-yt">{siteTitle}</span>
         </Link>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <Link to="/" className="mr-5 hover:text-white">
-            First Link
+          <Link to="/page-2" className="mr-5 hover:text-white">
+            Page 2
           </Link>
         </nav>
-        <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
+        {/* <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
           Button
           <Arrow />
-        </button>
+        </button> */}
+        <ThemeSwitcher />
       </div>
     </header>
   )
