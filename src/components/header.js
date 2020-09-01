@@ -10,7 +10,7 @@ const Icon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
     strokeWidth="2"
-    className="w-10 h-10 text-white p-2 bg-orange-500 rounded-full"
+    className="w-10 h-10 p-2 text-white bg-orange-500 rounded-full"
     viewBox="0 0 24 24"
   >
     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
@@ -23,7 +23,7 @@ const Pisces = () => (
     viewBox="0 0 100 100"
     fill="none"
     stroke="currentColor"
-    className="appLogo w-12 h-12 rounded-full"
+    className="w-12 h-12 rounded-full appLogo"
   >
     <path d="M81.469 80.744a.514.514 0 00-.351-.144c-1.824-.038-8.63-2.596-12.104-6.312-3.452-3.686-4.469-10.237-3.04-13.418a.51.51 0 00-.455-.716l-.097-.005c-2.688 0-6.935 3.884-12.621 11.535-.332.448-.628.864-.908 1.253-1.949 2.72-2.679 3.737-8.255 5.802-1.814.672-5.596 1.803-10.535 1.803-5.173 0-12.729-1.314-19.371-7.556.452-7.399 6.72-14.578 10.88-19.341 1.805-2.067 3.105-3.56 3.426-4.508a.506.506 0 00-.176-.563.53.53 0 00-.581-.034 28.146 28.146 0 01-14.706 4.168c-4.045 0-6.724-.87-6.748-.878a.483.483 0 00-.481.075.521.521 0 00-.196.437A44.767 44.767 0 0018.209 81.59c8.467 8.465 19.721 13.126 31.69 13.126 11.97 0 23.226-4.661 31.692-13.126a.535.535 0 00.145-.37.479.479 0 00-.154-.36l-.113-.116zm-21.458 1.768a.518.518 0 00-.015.557c.119.196.307.234.484.245l3.97-.394.945 1.685-9.608.95 5.462-7.959 1.008 1.638-2.246 3.278z" />
     <path d="M63.69 49.839a.266.266 0 00-.201-.152c-.499-.06-.993-.091-1.464-.091-7.996 0-10.871 8.549-12.772 14.207-.403 1.2-.748 2.236-1.093 3.021-1.997 4.584-6.738 8.18-6.787 8.216a.255.255 0 00-.067.336c.082.133.371.357 1.402.357.768 0 1.805-.121 3.087-.362 3.354-.627 6.254-5.164 8.375-8.479.385-.599.739-1.154 1.061-1.627 1.311-1.93 3.528-3.662 4.854-4.695.982-.77 1.213-.961 1.228-1.188a.312.312 0 00-.071-.214c-.02-.025-1.526-3.406 2.428-9.081a.268.268 0 00.02-.248zM75.681 72.401c-5.185-4.705-7.137-13.275-7.156-13.362a.256.256 0 00-.226-.198l-.023-.002a.26.26 0 00-.235.149c-.029.072-3.125 7.218 2.692 14.246 4.942 5.976 10.231 6.44 11.733 6.44.184 0 .312-.009.394-.015.024.01.053.015.082.015.073 0 .14-.029.192-.081a55.12 55.12 0 001.204-1.406.262.262 0 00.044-.25.25.25 0 00-.192-.164c-.034-.008-3.34-.672-8.509-5.372z" />
@@ -72,24 +72,20 @@ const Header = ({ siteTitle }) => {
         transition: "color 0.1s ease-out, background 0.1s ease-out",
       }}
     >
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center select-none">
+      <div className="container flex flex-col flex-wrap items-center p-5 mx-auto select-none md:flex-row">
         <Link
           to="/"
-          className="flex  font-medium items-center text-white mb-4 md:mb-0"
+          className="flex items-center mb-4 font-medium text-white md:mb-0"
         >
-          {/* <Icon /> */}
-          {/* <img className="appLogo w-16 h-16" src={
-            mylogo} alt="my logo"/> */}
-
           <Pisces />
           <span className="ml-3 text-4xl font-yt">{siteTitle}</span>
         </Link>
-        <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto">
           <Link to="/page-2" className="mr-5 hover:text-white">
             Page 2
           </Link>
         </nav>
-        {/* <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
+        {/* <button className="inline-flex items-center px-3 py-1 mt-4 text-base bg-gray-800 border-0 rounded focus:outline-none hover:bg-gray-700 md:mt-0">
           Button
           <Arrow />
         </button> */}

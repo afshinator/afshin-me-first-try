@@ -11,7 +11,7 @@ body {
 body.dark {
   -webkit-font-smoothing: antialiased;
 
-  --bg: darkslategray;
+  --bg:  #7d8570; 
   --hdr: #742a2a;
   --hdrTxt: ddd;
   --txt: white;
