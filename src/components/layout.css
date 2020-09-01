@@ -1,4 +1,24 @@
-html {
+/* Basically this is the global CSS file */
+
+body {
+  --bg: #edf2f7;  /* gray-100 */
+  --hdr: #742a2a; /* red-900 */
+  --hdrTxt: #ddd;
+  --txt: black;
+  background-color: var(--bg);
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+
+  --bg: darkslategray;
+  --hdr: #742a2a;
+  --hdrTxt: black;
+  --txt: white;
+}
+
+
+/* html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -619,4 +639,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
+} */
