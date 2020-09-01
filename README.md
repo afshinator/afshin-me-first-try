@@ -1,3 +1,22 @@
+# Afshin.me
+
+### My blog and portfolio site - new for Sept 2020 in Gatsby JS!
+
+1. Add CSS Library and Custom Fonts
+
+  Added Tailwind CSS folllowing Gatsby docs
+
+  Added Lato and YellowTail fonts from Google docs, following:
+
+  https://dev.to/iangloude/4-steps-to-self-hosted-fonts-in-gatsby-aj2
+
+  https://www.digitalocean.com/community/tutorials/gatsbyjs-custom-fonts-in-gatsby
+
+  https://www.tailwindtoolbox.com/guides/adding-fonts-to-tailwind-css
+
+
+  ---
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
