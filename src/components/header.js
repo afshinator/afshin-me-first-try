@@ -81,6 +81,9 @@ const Header = ({ siteTitle }) => {
           <span className="ml-3 text-4xl font-yt">{siteTitle}</span>
         </Link>
         <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto">
+          <Link to="/about" className="mr-5 hover:text-white">
+            About
+          </Link>
           <Link to="/page-2" className="mr-5 hover:text-white">
             Page 2
           </Link>
