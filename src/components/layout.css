@@ -14,7 +14,7 @@ body.dark {
 
   --bg:  #7d8570; 
   --hdr: #742a2a;
-  --hdrTxt: ddd;
+  --hdrTxt: #d9cfc1;
   --txt: white;
   --txtAlt: #d9cfc1;
 }
@@ -26,7 +26,6 @@ body.dark {
   }
 }
 
-
 @keyframes spinny {
   from {
     transform: rotate(0deg);
@@ -36,6 +35,12 @@ body.dark {
   }
 }
 
+
+/* For header theme toggle button */
+input:checked ~ .toggle__dot {
+  transform: translateX(100%);
+  background-color: #7d8570;
+}
 
 /* html {
   font-family: sans-serif;

@@ -1,21 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
-
-const Icon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    stroke="currentColor"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeWidth="2"
-    className="w-10 h-10 p-2 text-white bg-orange-500 rounded-full"
-    viewBox="0 0 24 24"
-  >
-    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-  </svg>
-)
+import ToggleButton from "./ToggleButton"
 
 const Pisces = () => (
   <svg
@@ -33,31 +19,12 @@ const Pisces = () => (
   </svg>
 )
 
-const Arrow = () => (
-  <svg
-    fill="none"
-    stroke="currentColor"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeWidth="2"
-    className="w-4 h-4 ml-1"
-    viewBox="0 0 24 24"
-  >
-    <path d="M5 12h14M12 5l7 7-7 7"></path>
-  </svg>
-)
-
 const ThemeSwitcher = () => (
   <ThemeToggler>
     {({ theme, toggleTheme }) => (
-      <label>
-        <input
-          type="checkbox"
-          onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
-          checked={theme === "dark"}
-        />
-        Dark mode
-      </label>
+      <ToggleButton theme={theme} toggleTheme={toggleTheme}>
+        Dark Mode
+      </ToggleButton>
     )}
   </ThemeToggler>
 )
@@ -84,19 +51,21 @@ const Header = ({ siteTitle }) => {
           <Link to="/about" className="mr-5 hover:text-white">
             About
           </Link>
-          <Link to="/page-2" className="mr-5 hover:text-white">
+          <Link to="/page-2" className="mr-10 hover:text-white">
             Page 2
           </Link>
         </nav>
-        {/* <button className="inline-flex items-center px-3 py-1 mt-4 text-base bg-gray-800 border-0 rounded focus:outline-none hover:bg-gray-700 md:mt-0">
-          Button
-          <Arrow />
-        </button> */}
         <ThemeSwitcher />
       </div>
     </header>
   )
 }
+
+
+{/* <button className="inline-flex items-center px-3 py-1 mt-4 text-base bg-gray-800 border-0 rounded focus:outline-none hover:bg-gray-700 md:mt-0">
+  Button
+  <Arrow />
+</button> */}
 
 // const Header = ({ siteTitle }) => (
 //   <header
