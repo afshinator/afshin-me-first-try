@@ -5,6 +5,7 @@ body {
   --hdr: #742a2a; /* red-900 */
   --hdrTxt: #d9cfc1;
   --txt: black;
+  --txtAlt: #102e4a;
   background-color: var(--bg);
 }
 
@@ -15,6 +16,7 @@ body.dark {
   --hdr: #742a2a;
   --hdrTxt: ddd;
   --txt: white;
+  --txtAlt: #d9cfc1;
 }
 
 
