@@ -47,7 +47,7 @@ const Header = ({ siteTitle }) => {
           <Pisces />
           <span className="ml-3 text-4xl font-yt">{siteTitle}</span>
         </Link>
-        <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto">
+        <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto font-lato">
           <Link to="/about" className="mr-5 hover:text-white">
             About
           </Link>
@@ -62,10 +62,10 @@ const Header = ({ siteTitle }) => {
 }
 
 
-{/* <button className="inline-flex items-center px-3 py-1 mt-4 text-base bg-gray-800 border-0 rounded focus:outline-none hover:bg-gray-700 md:mt-0">
+/* <button className="inline-flex items-center px-3 py-1 mt-4 text-base bg-gray-800 border-0 rounded focus:outline-none hover:bg-gray-700 md:mt-0">
   Button
   <Arrow />
-</button> */}
+</button> */
 
 // const Header = ({ siteTitle }) => (
 //   <header

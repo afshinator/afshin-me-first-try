@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
 
       <main
-        className="max-w-5xl min-h-full p-5 bg-transparent"
+        className="max-w-5xl min-h-full p-5 bg-transparent font-lato"
         style={{ margin: "0 auto" }}
       >
         {children}

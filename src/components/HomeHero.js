@@ -53,11 +53,15 @@ const HomeHero = () => {
               <img src={myPic} alt="afshin mokhtari" className="rounded-full"/>
             </div>
             <div className="flex flex-col items-center justify-center text-center">
-              <h2 className="mt-4 text-lg font-medium text-gray-900 title-font">
+              <h2 className="mt-4 text-lg font-medium "
+                              style={{
+                                color: "var(--txt)",
+                              }}
+              >
                 Afshin Mokhtari
               </h2>
               <div
-                className="w-12 h-1 mt-2 mb-4 bg-red-500 rounded"
+                className="w-12 h-1 mt-2 mb-4 rounded"
                 style={{
                   backgroundColor: "var(--hdr)",
                 }}
@@ -77,8 +81,9 @@ const HomeHero = () => {
           <div className="pt-4 mt-4 text-center border-t border-gray-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0 sm:text-left">
             <p className="mb-4 text-lg leading-relaxed">
               Its <em>September 2020</em> and it has been more than a year since my
-              old WordPress website went down.  It took this <strong>GatsbyJS</strong> 
-              static site generation with React under the hood thing
+              old WordPress website went down.  It took  
+              this <strong>GatsbyJS</strong> static
+              site generation with React under the hood thing
               to get me excited enough to do something about it.  So let's
               see what kind of fun stuff I can pull together...
             </p>

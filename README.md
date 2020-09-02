@@ -20,7 +20,10 @@
     Looks like Gatsby plugin to the rescue: 
     https://www.gatsbyjs.com/plugins/gatsby-plugin-dark-mode/
 
+    I was looking for a more inspiring look for a switch box element and I found:
     
+    https://codepen.io/lhermann/pen/EBGZRZ
+
 
   ---
 
