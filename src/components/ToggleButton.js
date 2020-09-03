@@ -2,7 +2,7 @@ import React from "react"
 
 const ToggleButton = ({ theme, toggleTheme, children }) => {
   return (
-    <label for="toogleA" className="flex items-center cursor-pointer">
+    <label htmlFor="toogleA" className="flex items-center cursor-pointer">
       <div className="relative">
         <input
           id="toogleA"

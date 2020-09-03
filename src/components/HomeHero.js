@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { RouteAnnouncerProps } from "./../../.cache/route-announcer-props"
 import myPic from "../images/me1.png"
 
 const Arrow = () => (
@@ -80,17 +79,21 @@ const HomeHero = () => {
           </div>
           <div className="pt-4 mt-4 text-center border-t border-gray-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0 sm:text-left">
             <p className="mb-4 text-lg leading-relaxed">
-              Its <em>September 2020</em> and it has been more than a year since my
+              Its <em className="text-yellow-100">September 2020</em> and it has been more than a year since my
               old WordPress website went down.  It took  
               this <strong>GatsbyJS</strong> static
               site generation with React under the hood thing
               to get me excited enough to do something about it.  So let's
               see what kind of fun stuff I can pull together...
             </p>
+            <p className="mb-4 text-xl text-yellow-100">
+              This site is a one pager for now, but in coming days and weeks I plan to implement
+              a blog and more...
+            </p>
             <p className="mb-4 text-lg">
-              I'd also like to mention I play drums, practice Tai Chi, and poke people 
-              with acupuncture needles for their own benefit and harmony.  Its an
-              interesting life.
+              By the way, I'd also like to mention I play drums, practice Tai Chi, and poke people 
+              with acupuncture needles for their own benefit and harmony.  
+              Its an interesting life.
             </p>
             <Link
               to="/about"
