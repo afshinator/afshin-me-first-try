@@ -25,6 +25,12 @@
     https://codepen.io/lhermann/pen/EBGZRZ
 
 
+3. Adding Cypress for testing. ⛔
+
+    I played with this when it first came out, it sure looks like
+    its matured quite a a bit.
+
+
   ---
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
