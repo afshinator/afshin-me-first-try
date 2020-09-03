@@ -5,7 +5,9 @@ body {
   --hdr: #742a2a; /* red-900 */
   --hdrTxt: #d9cfc1;
   --txt: black;
+  --txtAlt: #102e4a;
   background-color: var(--bg);
+  font-family: 'lato';
 }
 
 body.dark {
@@ -13,8 +15,21 @@ body.dark {
 
   --bg:  #7d8570; 
   --hdr: #742a2a;
-  --hdrTxt: ddd;
+  --hdrTxt: #d9cfc1;
   --txt: white;
+  --txtAlt: #d9cfc1;
+}
+
+html, body, #___gatsby {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+div[role="group"][tabindex] {
+  height: 100%;
 }
 
 
@@ -23,7 +38,6 @@ body.dark {
     animation: spinny infinite 40s linear;
   }
 }
-
 
 @keyframes spinny {
   from {
@@ -34,6 +48,12 @@ body.dark {
   }
 }
 
+
+/* For header theme toggle button */
+input:checked ~ .toggle__dot {
+  transform: translateX(100%);
+  background-color: #7d8570;
+}
 
 /* html {
   font-family: sans-serif;
