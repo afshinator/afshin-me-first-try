@@ -60,7 +60,7 @@ const HomeHero = () => {
   return (
     <section className="container flex flex-col px-5 py-12 mx-auto">
       <div className="mx-auto lg:w-4/6">
-        <div className="h-64 overflow-hidden rounded-lg cursor-pointer" onClick={onClick}>
+        <div className="h-64 overflow-hidden rounded-lg cursor-pointer select-none" onClick={onClick}>
           {transitions.map(({ item, props, key }) => {
             const Page = pages[item]
             return <Page key={key} style={props} />
