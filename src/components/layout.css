@@ -1,11 +1,13 @@
 /* Basically this is the global CSS file */
 
+/* Light and Dark theme variables 
+*/
 body {
   --bg: #d9cfc1;  /* gray-100 */
   --hdr: #742a2a; /* red-900 */
   --hdrTxt: #d9cfc1;
-  --txt: black;
-  --txtAlt: #102e4a;
+  --txt: #252323;
+  --txtAlt: #632a50 ;
   background-color: var(--bg);
   font-family: 'lato';
 }
@@ -17,22 +19,26 @@ body.dark {
   --hdr: #742a2a;
   --hdrTxt: #d9cfc1;
   --txt: white;
-  --txtAlt: #d9cfc1;
+  --txtAlt: #fffff0;  /* yellow-100 */
 }
 
+
+/* To help make content area take up full area,
+  and help keep footer fixed to bottom 
+  */
 html, body, #___gatsby {
   height: 100%;
 }
-
 body {
   margin: 0px;
 }
-
 div[role="group"][tabindex] {
   height: 100%;
 }
 
 
+/* For app logo spin 
+*/
 @media (prefers-reduced-motion: no-preference) {
   .appLogo {
     animation: spinny infinite 40s linear;
@@ -49,11 +55,35 @@ div[role="group"][tabindex] {
 }
 
 
-/* For header theme toggle button */
+/* For header theme toggle button 
+*/
 input:checked ~ .toggle__dot {
   transform: translateX(100%);
   background-color: #7d8570;
 }
+
+
+/* Vibrating text effect glow effect 
+*/
+.viboFx span {
+  transition: all 4900ms;
+  display: inline-block;
+  margin-right: 2px;
+  text-shadow: 1px 1px 2px #999;
+}
+.viboFx span:hover{
+  filter: blur(3px);
+  animation: vibrate 100ms linear infinite forwards;
+}
+@keyframes vibrate{
+  0% {
+      transform: translateX(-1px) translateY(1px);
+  }
+  100% {
+      transform: translateX(1px) translateY(-2px);
+  }
+}
+
 
 /* html {
   font-family: sans-serif;
