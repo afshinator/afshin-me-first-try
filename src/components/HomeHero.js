@@ -69,7 +69,7 @@ const HomeHero = () => {
         <div className="flex flex-col mt-10 sm:flex-row">
           <div className="text-center sm:w-1/3 sm:pr-8 sm:py-8">
             <div className="w-20 h-20" style={{ margin: "0 auto" }}>
-              <img src={myPic} alt="afshin mokhtari" className="rounded-full" />
+              <img src={myPic} alt="afshin mokhtari" className="rounded-full myPic" />
             </div>
             <div className="flex flex-col items-center justify-center text-center">
               <h2
