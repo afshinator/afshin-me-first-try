@@ -25,6 +25,14 @@
     https://codepen.io/lhermann/pen/EBGZRZ
 
 
+3. Adding **Cypress** for testing. It was cake 🍰!
+
+    I played with this when it first came out, it sure looks like
+    its matured quite a a bit.  I was able to quickly whip 
+    some tests together.
+
+
+
   ---
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->

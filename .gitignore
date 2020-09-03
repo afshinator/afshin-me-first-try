@@ -1,3 +1,6 @@
+# Cypress example files
+cypress/integration/examples/
+
 # Logs
 logs
 *.log
