@@ -1,6 +1,6 @@
 # Afshin.me
 
-### My blog and portfolio site - new for Sept 2020 in Gatsby JS!
+### My blog and portfolio site - new for Sept 2020😷 in Gatsby JS!
 
 1. Add CSS Library and Custom Fonts
 
@@ -31,6 +31,19 @@
     its matured quite a a bit.  I was able to quickly whip 
     some tests together.
 
+
+4. Found some inspiration looking for text animation from this post and added some of these
+
+    https://dev.to/akhilarjun/four-subtle-text-effects-to-spice-up-your-web-site-27e7
+
+
+
+5. My idea is to have an /apps dir that will my playground for 
+different web technology ideas. 🤓The first app I'm thinking of 
+is a full-page video player that remembers a list of videos you
+can add/remove to; saved in localstorage.
+
+But first I think I'll flesh out the 404 page.💨
 
 
   ---

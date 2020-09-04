@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import Pisces from "./Pisces"
 
 const Footer = ({ siteTitle }) => {
