@@ -32,7 +32,11 @@
     some tests together.
 
 
+4. Found some inspiration looking for animation from this post and added some of these
 
+    https://dev.to/akhilarjun/four-subtle-text-effects-to-spice-up-your-web-site-27e7
+
+    
   ---
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->

@@ -8,6 +8,7 @@ body {
   --hdrTxt: #d9cfc1;
   --txt: #252323;
   --txtAlt: #632a50 ;
+  --myBlue: #102e4a;
   background-color: var(--bg);
   font-family: 'lato';
 }
@@ -18,7 +19,7 @@ body.dark {
   --bg:  #7d8570; 
   --hdr: #742a2a;
   --hdrTxt: #d9cfc1;
-  --txt: white;
+  --txt: #252323;
   --txtAlt: #fffff0;  /* yellow-100 */
 }
 
@@ -66,14 +67,14 @@ input:checked ~ .toggle__dot {
 /* Vibrating text effect glow effect 
 */
 .viboFx span {
-  transition: all 4900ms;
+  transition: all 900ms;
   display: inline-block;
   margin-right: 2px;
   text-shadow: 1px 1px 2px #999;
 }
 .viboFx span:hover{
   filter: blur(3px);
-  animation: vibrate 100ms linear infinite forwards;
+  animation: vibrate 200ms linear infinite forwards;
 }
 @keyframes vibrate{
   0% {
@@ -83,6 +84,42 @@ input:checked ~ .toggle__dot {
       transform: translateX(1px) translateY(-2px);
   }
 }
+
+
+/* Waves in text effect
+*/
+.wavesFx {
+  /* color: transparent; */
+  -webkit-text-stroke: 1px #058ed9;
+  position: relative;
+  font-size: 100px;
+}
+.wavesFx:after{
+  content: attr(data-word);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--myBlue);
+  animation: waves 2.4s ease-in-out infinite forwards;
+}
+@keyframes waves{
+  0%, 100% {
+      clip-path: polygon(0 66%, 11% 59%, 18% 51%, 26% 46%, 35% 41%, 48% 44%, 55% 54%, 63% 63%, 76% 60%, 82% 50%, 92% 48%, 100% 53%, 100% 100%, 0% 100%);
+  }
+  50% {
+      clip-path: polygon(0 66%, 8% 74%, 17% 77%, 28% 70%, 35% 57%, 48% 44%, 56% 39%, 69% 41%, 75% 47%, 84% 60%, 92% 61%, 100% 53%, 100% 100%, 0% 100%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* html {
