@@ -51,6 +51,9 @@ const Header = ({ siteTitle }) => {
           <Link to="/about" className="mr-5 hover:text-white">
             About
           </Link>
+          <Link to="/apps" className="mr-5 hover:text-white">
+            Apps
+          </Link>
           <Link to="/page-2" className="mr-10 hover:text-white">
             Page 2
           </Link>
