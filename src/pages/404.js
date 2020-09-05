@@ -40,13 +40,13 @@ const NotFoundPage = ({ location }) => (
             </div>
             <h1 className="text-3xl">Page Not Found, or No Such Page!😮</h1>
             <p className="mt-12 text-xl">
-              Sorry to inform..., maybe it was lost at sea.
+            Are you sure you typed in the correct url?
             </p>
-            <p className="text-xl">
+            <p className="mt-4 text-xl">
               Hope you didn't get here by clicking on one of{" "}
               <em>my</em> links!
             </p>
-            <p className="text-xl">Are you sure you typed in the correct url?</p>
+            <p className="mt-4 text-xl"></p>
             <p className="mt-12 text-3xl">Back to <Link to="/" className="text-red-700">Afshin.me</Link></p>
           </section>
         </BackgroundImage>

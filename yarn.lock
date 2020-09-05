@@ -14286,6 +14286,11 @@ use-callback-ref@^1.2.1, use-callback-ref@^1.2.3:
   resolved "https://registry.yarnpkg.com/use-callback-ref/-/use-callback-ref-1.2.4.tgz#d86d1577bfd0b955b6e04aaf5971025f406bea3c"
   integrity sha512-rXpsyvOnqdScyied4Uglsp14qzag1JIemLeTWGKbwpotWht57hbP78aNT+Q4wdFKQfQibbUX4fb6Qb4y11aVOQ==
 
+use-draggable@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/use-draggable/-/use-draggable-1.5.2.tgz#ddcc928f6d03826eacffdb75ca89a9a85e9d9b98"
+  integrity sha512-irXfw3KXxaSEHxMQR1XWwhEaObxg0XPYxtRMOLiLizLqDnOJ2GacfhkhNO8DdsUK+Pf9+r4U5hlNW64ya5qYcg==
+
 use-sidecar@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/use-sidecar/-/use-sidecar-1.0.3.tgz#17a4e567d4830c0c0ee100040e85a7fe68611e0f"
