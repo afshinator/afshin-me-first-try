@@ -1,13 +1,17 @@
 import React from "react"
 
-const Pisces = ({ classes = "w-12 h-12" }) => {
+const Pisces = ({ 
+  classes = "w-12 h-12", 
+  fill = "none", 
+  stroke="currentColor"
+}) => {
   const classNames = `${classes} rounded-full appLogo`
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
-      fill="none"
-      stroke="currentColor"
+      fill={fill}
+      stroke={stroke}
       className={classNames}
       width="300"
     >
