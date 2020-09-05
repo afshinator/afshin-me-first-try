@@ -43,16 +43,6 @@ const HeroImage = () => {
 
 const pages = [
   ({ style }) => (
-    <animated.div style={{ ...style }}>
-      <HeroImage />
-    </animated.div>
-  ),
-  ({ style }) => (
-    <animated.div style={{ ...style, background: "lightblue" }}>
-      <img src={slide2} alt="technologies I used on this site" />
-    </animated.div>
-  ),
-  ({ style }) => (
     <animated.div
       style={{
         ...style,
@@ -63,10 +53,10 @@ const pages = [
       }}
       className="flex flex-col items-center rounded-full"
     >
-      <div className="wavesFx font-yt" data-word="Afshin.me" style={{}}>
+      <h1 className="wavesFx font-yt" data-word="Afshin.me" style={{}}>
         Afshin.me
-      </div>
-      <h3 className="text-3xl font-bold">My Portfolio and Blog website.</h3>
+      </h1>
+      <h2 className="text-3xl font-bold">My Portfolio and Blog website.</h2>
       <p className="font-bold">
         ...is happy to be back online the world wide web.🌍
       </p>
@@ -75,18 +65,25 @@ const pages = [
       </p>
     </animated.div>
   ),
+  ({ style }) => (
+    <animated.div style={{ ...style, background: "lightblue" }}>
+      <img src={slide2} alt="technologies I used on this site" />
+    </animated.div>
+  ),
+  ({ style }) => (
+    <animated.div style={{ ...style }}>
+      <HeroImage />
+    </animated.div>
+  ),
 ]
 
 const HomeHero = () => {
   const [index, set] = useState(0)
-  const onClick = useCallback(
-    () => set(state => (state + 1) % pages.length),
-    []
-  )
-  const transitions = useTransition(index, p => p, {
-    from: { opacity: 1, transform: "translate3d(100%,0,0)" },
+  const onClick = useCallback(() => set(state => (state + 1) % pages.length),[])
+  const transitions = useTransition(index, p => p, {  // TODO: not working as expected! 🤔
+    from: { opacity:0, transform: "translate3d(100%,0,0)" },
     enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
-    leave: { opacity: 1, transform: "translate3d(-50%,0,0)" },
+    leave: { opacity: 0, transform: "translate3d(-50%,0,0)" },
   })
 
   return (
@@ -145,7 +142,7 @@ const HomeHero = () => {
                   color: "var(--txtAlt)",
                 }}
               >
-                <span className="transition-all cursor-pointer viboFx">
+                <span className="transition-all viboFx">
                   <span>2</span>
                   <span>0</span>
                   <span>2</span>
@@ -157,7 +154,7 @@ const HomeHero = () => {
               generation with React under the hood thing to get me excited
               enough to do something about it. So let's see what kind of fun
               stuff I can pull together...{" "}
-              <span className="float-right transition-all cursor-pointer viboFx">
+              <span className="float-right transition-all viboFx">
                 <span className="text-3xl">😷</span>
               </span>
             </p>
