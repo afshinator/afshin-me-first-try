@@ -23,13 +23,13 @@ const AppsPage = ({ location }) => {
 
   const [whichApp, setWhichApp] = useState(null)
 
-  const appSelectionHandler = e => {
+  const appSelectionHandler = React.useCallback( (e) => {
     const newlyClicked = e.target.innerHTML
     if (newlyClicked === whichApp) return
     setWhichApp(newlyClicked)
-  }
+  }, [whichApp])
 
-  // console.log(location)
+  
   return (
     <AppDataProvider>
       <div>

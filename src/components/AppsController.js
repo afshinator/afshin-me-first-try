@@ -15,13 +15,13 @@ const Hand = () => (
 const AppsController = ({ appSelectionHandler }) => {
   const [appToShow, setAppToShow] = React.useState(false)
 
-  const handleOver = e => {
+  const handleOver = (e) => {
     if (e.target.innerHTML.indexOf("Video") !== -1) {
       setAppToShow("video")
     }
   }
 
-  const handleOut = e => {
+  const handleOut = (e) => {
     setAppToShow("")
   }
 
@@ -49,5 +49,6 @@ const AppsController = ({ appSelectionHandler }) => {
     </section>
   )
 }
+
 
 export default AppsController

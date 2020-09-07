@@ -55,7 +55,7 @@ const Header = ({ siteTitle }) => {
         <ThemeSwitcher />
         { state.sound ? (
           <img
-            className="w-8 ml-4"
+            className="w-6 ml-4"
             src={soundOnImg}
             alt="Toggle sounds off"
             style={{
@@ -65,7 +65,7 @@ const Header = ({ siteTitle }) => {
           />
         ) : (
           <img
-            className="w-8 ml-4"
+            className="w-6 ml-4"
             src={soundOffImg}
             alt="Toggle sounds on"
             style={{
