@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import AppsShowcase from "./../components/AppsShowcase"
 import { useDraggable } from "use-draggable"
 import AppsController from "./../components/AppsController"
 import ZenMode from "./../components/AppZenMode"
+import AppDataProvider from "../providers/AppDataContext"
 
 const card =
   "absolute z-10 bg-white border border-gray-200 rounded shadow-lg opacity-75"
@@ -25,22 +25,24 @@ const AppsPage = ({ location }) => {
 
   const appSelectionHandler = e => {
     const newlyClicked = e.target.innerHTML
-    if ( newlyClicked === whichApp ) return 
+    if (newlyClicked === whichApp) return
     setWhichApp(newlyClicked)
   }
 
   // console.log(location)
   return (
-    <div>
-      <SEO title="Apps page " />
-      <h1>Hi from the Apps page</h1>
-      <p></p>
-      <Link to="/">Go back to the homepage</Link>
-      <section className={card} ref={targetRef}>
-        <AppsController appSelectionHandler={appSelectionHandler} />
-      </section>
-      {whichApp === null ? <AppsShowcase /> : <ZenMode />}
-    </div>
+    <AppDataProvider>
+      <div>
+        <SEO title="Apps page " />
+        <h1>Hi from the Apps page</h1>
+        <p></p>
+        <Link to="/">Go back to the homepage</Link>
+        <section className={card} ref={targetRef}>
+          <AppsController appSelectionHandler={appSelectionHandler} />
+        </section>
+        {whichApp === null ? <AppsShowcase /> : <ZenMode />}
+      </div>
+    </AppDataProvider>
   )
 }
 
