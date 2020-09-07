@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import AppsShowcase from "./../components/AppsShowcase"
 import { useDraggable } from "use-draggable"
-import AppsController from './../components/AppsController';
+import AppsController from "./../components/AppsController"
+import ZenMode from "./../components/AppZenMode"
 
 const card =
   "absolute z-10 bg-white border border-gray-200 rounded shadow-lg opacity-75"
@@ -20,9 +21,15 @@ const AppsPage = ({ location }) => {
   // TODO: If there is an app variable passed, render it\
   // else render a list of apps that can be rendered
 
-  const selectAppHandler = () => {}
+  const [whichApp, setWhichApp] = useState(null)
 
-  console.log(location)
+  const appSelectionHandler = e => {
+    const newlyClicked = e.target.innerHTML
+    if ( newlyClicked === whichApp ) return 
+    setWhichApp(newlyClicked)
+  }
+
+  // console.log(location)
   return (
     <div>
       <SEO title="Apps page " />
@@ -30,9 +37,9 @@ const AppsPage = ({ location }) => {
       <p></p>
       <Link to="/">Go back to the homepage</Link>
       <section className={card} ref={targetRef}>
-        <AppsController />
+        <AppsController appSelectionHandler={appSelectionHandler} />
       </section>
-      <AppsShowcase />
+      {whichApp === null ? <AppsShowcase /> : <ZenMode />}
     </div>
   )
 }
