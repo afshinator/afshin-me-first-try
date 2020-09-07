@@ -45,6 +45,10 @@ can add/remove to; saved in localstorage.
 
 But first I think I'll flesh out the 404 page.💨
 
+    I think I'll make the apps page be a showcase of different apps 
+    that can be launched on this page.
+
+    
 
   ---
 

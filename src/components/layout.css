@@ -24,6 +24,15 @@ body.dark {
 }
 
 
+.zoomable {
+  transition: transform 2s;
+}
+
+.zoomable:hover {
+  transform: scale(1.4);
+}
+
+
 /* To help make content area take up full area,
   and help keep footer fixed to bottom 
   */
