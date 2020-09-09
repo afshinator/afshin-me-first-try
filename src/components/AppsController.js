@@ -12,7 +12,7 @@ const Hand = () => (
   </svg>
 )
 
-const AppsController = ({ appSelectionHandler }) => {
+const AppsController = React.memo ( ({ appSelectionHandler }) => {
   const [appToShow, setAppToShow] = React.useState(false)
 
   const handleOver = (e) => {
@@ -49,6 +49,6 @@ const AppsController = ({ appSelectionHandler }) => {
     </section>
   )
 }
-
+)
 
 export default AppsController

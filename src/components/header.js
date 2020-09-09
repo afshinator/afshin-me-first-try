@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import React, { useContext, createContext } from "react"
+import { motion } from "framer-motion"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import ToggleButton from "./ToggleButton"
 import Pisces from "./Pisces"
@@ -39,7 +40,13 @@ const Header = ({ siteTitle }) => {
           className="flex items-center mb-4 font-medium text-white md:mb-0"
         >
           <Pisces />
-          <span className="ml-3 text-4xl font-yt">{siteTitle}</span>
+          <motion.span className="ml-3 text-4xl font-yt"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{ duration: 2.0 }}
+          >
+            {siteTitle}
+          </motion.span>
         </Link>
         <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto font-lato">
           <Link to="/about" className="mr-5 hover:text-white">

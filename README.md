@@ -45,10 +45,18 @@ can add/remove to; saved in localstorage.
 
 But first I think I'll flesh out the 404 page.💨
 
-    I think I'll make the apps page be a showcase of different apps 
-    that can be launched on this page.
+I think I'll make the apps page be a showcase of different apps 
+that can be launched on this page.
 
-    
+6. Took two days going down a few different routes all around 
+development... including finding out that React-Spring is quite
+verbose compared to the Framer-Motion API.   I think I'll switch.
+
+One nice thing about the switch to Framer-Motion is that I don't
+have to use useDraggable anymore either; it was laggy so I'm 
+very happy about losing that dependency.
+
+
 
   ---
 

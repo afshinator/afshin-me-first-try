@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import { useTransition, animated } from "react-spring"
+import { motion } from "framer-motion"
 import Img from "gatsby-image"
 import myPic from "../images/me1.png"
 import slide2 from "../images/hero-slide2.png"
@@ -58,10 +59,10 @@ const pages = [
       </h1>
       <h2 className="text-3xl font-bold">My Portfolio and Blog website.</h2>
       <p className="font-bold">
-        ...is happy to be back online the world wide web.🌍
+        ... happy to be back on the world wide web🌍
       </p>
       <p className="font-bold">
-        Fighting COVID-19 and 'the man' daily, in my own way.
+        I bring you various things of interest from my universe.
       </p>
     </animated.div>
   ),
@@ -79,9 +80,13 @@ const pages = [
 
 const HomeHero = () => {
   const [index, set] = useState(0)
-  const onClick = useCallback(() => set(state => (state + 1) % pages.length),[])
-  const transitions = useTransition(index, p => p, {  // TODO: not working as expected! 🤔
-    from: { opacity:0, transform: "translate3d(100%,0,0)" },
+  const onClick = useCallback(
+    () => set(state => (state + 1) % pages.length),
+    []
+  )
+  const transitions = useTransition(index, p => p, {
+    // TODO: not working as expected! 🤔
+    from: { opacity: 0, transform: "translate3d(100%,0,0)" },
     enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
     leave: { opacity: 0, transform: "translate3d(-50%,0,0)" },
   })
@@ -100,38 +105,51 @@ const HomeHero = () => {
         </div>
         <div className="flex flex-col mt-10 sm:flex-row">
           <div className="text-center sm:w-1/3 sm:pr-8 sm:py-8">
-            <div className="w-20 h-20" style={{ margin: "0 auto" }}>
+            <motion.div
+              className="w-20 h-20"
+              style={{ margin: "0 auto" }}
+              initial={{ opacity: 0 }}
+              animate={{ scale: [2, 1], opacity: 1 }}
+              transition={{ duration: 1.0, ease: "easeIn" }}
+            >
               <img
                 src={myPic}
                 alt="afshin mokhtari"
                 className="rounded-full myPic"
               />
-            </div>
+            </motion.div>
             <div className="flex flex-col items-center justify-center text-center">
-              <h2
-                className="mt-4 text-lg font-medium "
+              <motion.h2
+                className="mt-4 text-lg font-bold "
                 style={{
                   color: "var(--txt)",
                 }}
+                transition={{ delay: 1.5 }}
+                animate={{ rotateZ: 360, color: "var(--txt)", duration: 1.0 }}
               >
                 Afshin Mokhtari
-              </h2>
+              </motion.h2>
               <div
                 className="w-12 h-1 mt-2 mb-4 rounded"
                 style={{
                   backgroundColor: "var(--hdr)",
                 }}
               ></div>
-              <p
-                className="text-base"
+              <motion.p
+                className="text-left"
                 style={{
                   color: "var(--txtAlt)",
                 }}
+                transition={{ delay: 2.5 }}
+                animate={{ y: [0, 10, 0, 10, 0, 10, 0], duration: 2.0 }}
               >
-                I write Javascript, HTML, CSS, and a few more languages I hardly
-                use like Python, and C. My specialty is in web apps with React
-                JS and mobile stuff with React Native.
-              </p>
+                I'm a Software Engineer.
+                These days my specialty is in Web apps with <strong>React-JS</strong> and 
+                mobile apps with React Native.
+                I also have older experience with 
+                Ruby on Rails, Backbone JS, JQuery, and much more
+                I've also been playing with TensorFlow, ...
+              </motion.p>
             </div>
           </div>
           <div className="pt-4 mt-4 text-center border-t border-gray-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0 sm:text-left">

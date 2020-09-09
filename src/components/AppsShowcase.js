@@ -30,6 +30,7 @@ const AppsShowcase = () => {
               <strong>Zen Mode</strong>
               </h2>
               <p className="text-base leading-relaxed">
+                September, 2020 - 
                 A little meditative FULL SCREEN VIDEO of nature 🌲 - for these
                 trying 2020 times; while everything around us burns 🔥 here in
                 Northern California.
