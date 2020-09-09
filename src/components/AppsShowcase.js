@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import app1 from "../images/appShot1.png"
 
 const AppsShowcase = () => {
   return (
@@ -18,29 +19,22 @@ const AppsShowcase = () => {
         </div>
         <div className="flex flex-wrap -mx-4 -mt-4 -mb-10 sm:-m-4">
           <div className="flex flex-col items-center p-4 mb-6 text-center md:w-1/3 md:mb-0">
-            <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 text-indigo-500 bg-indigo-100 rounded-full">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-10 h-10"
-                viewBox="0 0 24 24"
-              >
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-              </svg>
-            </div>
+            <img
+              className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 rounded-full shadow-lg"
+              src={app1}
+              alt="screenshot of Zen Mode Video applet"
+            />
+
             <div className="flex-grow">
               <h2 className="mb-3 text-lg font-medium text-gray-900 title-font">
-                Zen Mode Video
+              <strong>Zen Mode</strong>
               </h2>
               <p className="text-base leading-relaxed">
-                A little meditative full screen video of nature - for these
-                trying 2020 times; while everything burns around us here in
+                September, 2020 - 
+                A little meditative FULL SCREEN VIDEO of nature 🌲 - for these
+                trying 2020 times; while everything around us burns 🔥 here in
                 Northern California.
               </p>
-
             </div>
           </div>
           <div className="flex flex-col items-center p-4 mb-6 text-center md:w-1/3 md:mb-0">
@@ -68,7 +62,6 @@ const AppsShowcase = () => {
                 taxidermy. Gastropub indxgo juice poutine, ramps microdosing
                 banh mi pug VHS try-hard.
               </p>
-
             </div>
           </div>
           <div className="flex flex-col items-center p-4 mb-6 text-center md:w-1/3 md:mb-0">
@@ -95,11 +88,9 @@ const AppsShowcase = () => {
                 taxidermy. Gastropub indxgo juice poutine, ramps microdosing
                 banh mi pug VHS try-hard.
               </p>
-
             </div>
           </div>
         </div>
-
       </div>
     </section>
   )

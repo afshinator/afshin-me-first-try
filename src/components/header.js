@@ -1,8 +1,12 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useContext, createContext } from "react"
+import { motion } from "framer-motion"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import ToggleButton from "./ToggleButton"
 import Pisces from "./Pisces"
+import soundOnImg from "../images/sound.svg"
+import soundOffImg from "../images/sound-mute.svg"
+import { AppDataContext } from "./../providers/AppDataContext"
 
 const ThemeSwitcher = () => (
   <ThemeToggler>
@@ -15,6 +19,12 @@ const ThemeSwitcher = () => (
 )
 
 const Header = ({ siteTitle }) => {
+  // const { sound, soundsOff, soundsOn } = useContext(AppDataContext)
+  const values = useContext(AppDataContext)
+  const { state, soundsOff, soundsOn } = values
+  console.log("in header ", values)
+
+
   return (
     <header
       className=""
@@ -30,7 +40,13 @@ const Header = ({ siteTitle }) => {
           className="flex items-center mb-4 font-medium text-white md:mb-0"
         >
           <Pisces />
-          <span className="ml-3 text-4xl font-yt">{siteTitle}</span>
+          <motion.span className="ml-3 text-4xl font-yt"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{ duration: 2.0 }}
+          >
+            {siteTitle}
+          </motion.span>
         </Link>
         <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto font-lato">
           <Link to="/about" className="mr-5 hover:text-white">
@@ -44,11 +60,31 @@ const Header = ({ siteTitle }) => {
           </Link>
         </nav>
         <ThemeSwitcher />
+        { state.sound ? (
+          <img
+            className="w-6 ml-4"
+            src={soundOnImg}
+            alt="Toggle sounds off"
+            style={{
+              stroke: "var(--hdrTxt)",
+            }}
+            onClick={()=>{ soundsOff() }}
+          />
+        ) : (
+          <img
+            className="w-6 ml-4"
+            src={soundOffImg}
+            alt="Toggle sounds on"
+            style={{
+              stroke: "var(--hdrTxt)",
+            }}
+            onClick={()=>{ soundsOn() }}
+          />
+        )}
       </div>
     </header>
   )
 }
-
 
 /* <button className="inline-flex items-center px-3 py-1 mt-4 text-base bg-gray-800 border-0 rounded focus:outline-none hover:bg-gray-700 md:mt-0">
   Button
