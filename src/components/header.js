@@ -73,8 +73,8 @@ const Header = ({ siteTitle }) => {
         <Anim>
           <ThemeSwitcher />
         </Anim>
-        {state.sound ? (
-          <Anim>
+        <Anim>
+          {state.sound ? (
             <Sound
               classes="w-6 ml-4"
               fill="var(--hdrTxt)"
@@ -82,9 +82,7 @@ const Header = ({ siteTitle }) => {
                 soundsOff()
               }}
             />
-          </Anim>
-        ) : (
-          <Anim>
+          ) : (
             <SoundOff
               classes="w-6 ml-4"
               fill="var(--hdrTxt)"
@@ -92,8 +90,8 @@ const Header = ({ siteTitle }) => {
                 soundsOn()
               }}
             />
-          </Anim>
-        )}
+          )}
+        </Anim>
       </div>
     </header>
   )
