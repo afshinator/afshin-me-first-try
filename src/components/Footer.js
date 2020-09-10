@@ -1,6 +1,6 @@
 import React from "react"
+import Pisces from "./svgs/Pisces"
 // import { Link } from "gatsby"
-import Pisces from "./Pisces"
 
 const Footer = ({ siteTitle }) => {
   return (

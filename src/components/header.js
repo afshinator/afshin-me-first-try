@@ -3,19 +3,27 @@ import React, { useContext, createContext } from "react"
 import { motion } from "framer-motion"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import ToggleButton from "./ToggleButton"
-import Pisces from "./Pisces"
-import soundOnImg from "../images/sound.svg"
-import soundOffImg from "../images/sound-mute.svg"
+import Pisces from "./svgs/Pisces"
 import { AppDataContext } from "./../providers/AppDataContext"
+import Sound from "./svgs/Sound"
+import SoundOff from "./svgs/SoundOff"
 
 const ThemeSwitcher = () => (
   <ThemeToggler>
     {({ theme, toggleTheme }) => (
-      <ToggleButton theme={theme} toggleTheme={toggleTheme}>
-        Dark Mode
-      </ToggleButton>
+      <ToggleButton theme={theme} toggleTheme={toggleTheme}></ToggleButton>
     )}
   </ThemeToggler>
+)
+
+const Anim = ({ children }) => (
+  <motion.div
+    whileHover={{
+      scale: 1.1,
+    }}
+  >
+    {children}
+  </motion.div>
 )
 
 const Header = ({ siteTitle }) => {
@@ -23,7 +31,6 @@ const Header = ({ siteTitle }) => {
   const values = useContext(AppDataContext)
   const { state, soundsOff, soundsOn } = values
   console.log("in header ", values)
-
 
   return (
     <header
@@ -40,10 +47,14 @@ const Header = ({ siteTitle }) => {
           className="flex items-center mb-4 font-medium text-white md:mb-0"
         >
           <Pisces />
-          <motion.span className="ml-3 text-4xl font-yt"
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
+          <motion.span
+            className="ml-3 text-4xl font-yt"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 2.0 }}
+            whileHover={{
+              textShadow: "0px 0px 8px rgb(255,255,255)",
+            }}
           >
             {siteTitle}
           </motion.span>
@@ -59,73 +70,33 @@ const Header = ({ siteTitle }) => {
             Page 2
           </Link>
         </nav>
-        <ThemeSwitcher />
-        { state.sound ? (
-          <img
-            className="w-6 ml-4"
-            src={soundOnImg}
-            alt="Toggle sounds off"
-            style={{
-              stroke: "var(--hdrTxt)",
-            }}
-            onClick={()=>{ soundsOff() }}
-          />
+        <Anim>
+          <ThemeSwitcher />
+        </Anim>
+        {state.sound ? (
+          <Anim>
+            <Sound
+              classes="w-6 ml-4"
+              fill="var(--hdrTxt)"
+              onClick={() => {
+                soundsOff()
+              }}
+            />
+          </Anim>
         ) : (
-          <img
-            className="w-6 ml-4"
-            src={soundOffImg}
-            alt="Toggle sounds on"
-            style={{
-              stroke: "var(--hdrTxt)",
-            }}
-            onClick={()=>{ soundsOn() }}
-          />
+          <Anim>
+            <SoundOff
+              classes="w-6 ml-4"
+              fill="var(--hdrTxt)"
+              onClick={() => {
+                soundsOn()
+              }}
+            />
+          </Anim>
         )}
       </div>
     </header>
   )
 }
-
-/* <button className="inline-flex items-center px-3 py-1 mt-4 text-base bg-gray-800 border-0 rounded focus:outline-none hover:bg-gray-700 md:mt-0">
-  Button
-  <Arrow />
-</button> */
-
-// const Header = ({ siteTitle }) => (
-//   <header
-//     style={{
-//       background: `rebeccapurple`,
-//       marginBottom: `1.45rem`,
-//     }}
-//   >
-//     <div
-//       style={{
-//         margin: `0 auto`,
-//         maxWidth: 960,
-//         padding: `1.45rem 1.0875rem`,
-//       }}
-//     >
-//       <h1 style={{ margin: 0 }}>
-//         <Link
-//           to="/"
-//           style={{
-//             color: `white`,
-//             textDecoration: `none`,
-//           }}
-//         >
-//           {siteTitle}
-//         </Link>
-//       </h1>
-//     </div>
-//   </header>
-// )
-
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-
-// Header.defaultProps = {
-//   siteTitle: ``,
-// }
 
 export default Header
