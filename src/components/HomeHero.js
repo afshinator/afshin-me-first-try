@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { motion } from "framer-motion"
 import Img from "gatsby-image"
 import myPic from "../images/me1.png"
-import Arrow from "./Arrow"
+import Arrow from "./svgs/Arrow"
 
 
 const HeroImage = () => {

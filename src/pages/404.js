@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from "gatsby"
 import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import SEO from "../components/seo"
-import Pisces from "../components/Pisces"
+import Pisces from "../components/svgs/Pisces"
 
 const NotFoundPage = ({ location }) => (
   <StaticQuery

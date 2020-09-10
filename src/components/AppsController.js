@@ -1,6 +1,6 @@
 import React from "react"
-import Pisces from "./Pisces"
 import { Link } from "gatsby"
+import Pisces from "./svgs/Pisces"
 
 const Hand = () => (
   <svg className="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
