@@ -11,8 +11,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import "./layout.css"
 import Header from "./Header"
 import Footer from "./Footer"
+import AppDataProvider from "../providers/AppDataContext"
 
-const Layout = ({ children }) => {
+const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,6 +25,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
+    <AppDataProvider>
     <div
       style={{
         display: "flex",
@@ -33,7 +35,9 @@ const Layout = ({ children }) => {
       }}
     >
       <div>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} 
+          location={location}
+        />
 
         <main
           className="max-w-5xl bg-transparent font-lato"
@@ -45,6 +49,7 @@ const Layout = ({ children }) => {
 
       <Footer siteTitle={data.site.siteMetadata.title} />
     </div>
+    </AppDataProvider>
   )
 }
 

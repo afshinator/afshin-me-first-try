@@ -7,6 +7,8 @@ import Pisces from "./svgs/Pisces"
 import { AppDataContext } from "./../providers/AppDataContext"
 import Sound from "./svgs/Sound"
 import SoundOff from "./svgs/SoundOff"
+import useSound from 'use-sound';
+import toggleSound from '../sounds/click1.mp3'
 
 const ThemeSwitcher = () => (
   <ThemeToggler>
@@ -26,11 +28,15 @@ const Anim = ({ children }) => (
   </motion.div>
 )
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, location }) => {
   // const { sound, soundsOff, soundsOn } = useContext(AppDataContext)
   const values = useContext(AppDataContext)
   const { state, soundsOff, soundsOn } = values
-  console.log("in header ", values)
+  console.log("in header ", location, values)
+
+  const [playToggle] = useSound(
+    toggleSound, {volume: 0.75 }
+  )
 
   return (
     <header
@@ -60,7 +66,9 @@ const Header = ({ siteTitle }) => {
           </motion.span>
         </Link>
         <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto font-lato">
-          <Link to="/about" className="mr-5 hover:text-white">
+          <Link to="/about" className="mr-5 hover:text-white"
+          onClick={state.sound ? playToggle : null}
+          >
             About
           </Link>
           <Link to="/apps" className="mr-5 hover:text-white">
